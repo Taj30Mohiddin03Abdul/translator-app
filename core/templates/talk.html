@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Talking Face</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: #fff;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 600px;
+            padding: 25px;
+            background: #1c1c1c;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.05);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            font-size: 16px;
+            background: #2a2a2a;
+            color: #fff;
+            resize: none;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            background: #a3108a;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #c315aa;
+        }
+
+        video {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 16px;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        .back-btn:hover {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>AI Talking Face 🎤</h2>
+
+    <form method="get">
+        <textarea name="text" placeholder="Enter German text here..." required>{{ text }}</textarea>
+        <button type="submit">Generate Talking Video</button>
+    </form>
+
+    {% if video_url %}
+        <h3>Generated Video:</h3>
+        <video controls autoplay>
+            <source src="{{ video_url }}" type="video/mp4">
+        </video>
+    {% endif %}
+
+    <a class="back-btn" href="/">← Back to Translator</a>
+
+</div>
+
+</body>
+</html>
